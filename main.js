@@ -2,7 +2,11 @@
 axios.get("https://flynn.boolean.careers/exercises/api/random/mail ")
 .then(response => {
     const emaildata = response.data
+   
+    const listItems = document.querySelectorAll("li")
+
     
-    document.querySelector("li").innerHTML = emaildata.response
-    
+    listItems.forEach(element => {
+        element.innerHTML = emaildata
+    })
 })
